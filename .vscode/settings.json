@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "**/_*": false,
+        "**/__pycache__*": true,
+        "**/.tmp.*": true,
+        "/.tmp.*": true,
+        ".gitignore": true,
+        ".gitattributes": true,
+        "README.md": true,
+        "requirements.txt": true,
+
+    }
+}
