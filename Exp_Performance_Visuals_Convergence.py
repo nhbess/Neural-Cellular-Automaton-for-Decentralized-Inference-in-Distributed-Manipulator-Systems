@@ -13,6 +13,8 @@ from Environment.Tetromino import Tetromino
 from StateStructure import StateStructure
 from Util import calculate_mass_center
 
+
+_colors.FIG_SIZE = (6, 3)
 SHAPE_NAME = 'T'
 
 if SHAPE_NAME == 'U':

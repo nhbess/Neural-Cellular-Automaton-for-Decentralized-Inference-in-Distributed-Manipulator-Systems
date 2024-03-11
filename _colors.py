@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 PALETTE = ["001427","708d81","f4d58d","bf0603","8d0801"]
-FIG_SIZE = (6, 3)
+FIG_SIZE = (6*0.6, 3*0.6)
 
 
 def create_palette(number_of_colors: int, normalize=True):

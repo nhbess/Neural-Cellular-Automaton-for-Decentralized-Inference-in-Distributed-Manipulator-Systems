@@ -211,6 +211,9 @@ def resultant_error():
     plt.subplots(figsize=_colors.FIG_SIZE)
     plt.hist(tetros_times, bins=bins, alpha=0.6, label='Tetrominoes', color=pallette[0],weights=100*np.ones_like(tetros_times) / len(tetros_times))
     plt.hist(unknown_times, bins=bins, alpha=0.6, label='Unknown Shapes', color=pallette[1],weights=100*np.ones_like(unknown_times) / len(unknown_times))
+    
+    #reduce the font size of the legend
+    
 
     tetro_mean = np.mean(tetros_times)  
     tetro_median = np.median(tetros_times)  
@@ -237,7 +240,7 @@ def resultant_error():
     #plt.axvline(unknown_median, color=pallette[1], linestyle='dotted', linewidth=1, label=f'Unknown median: {unknown_median:.2f}')
 
     
-    plt.legend()
+    plt.legend(fontsize=7.5)
     plt.xlabel('Estimation Error $(\mu_e)$')
     plt.ylabel('Frequency [%]')
     
@@ -375,7 +378,10 @@ def by_shape():
     ax.set_xticks([i+1 for i in range(len(shapes))])
     ax.set_xticklabels(shapes)
     ax.set_ylabel('Estimation Error $(\mu_e)$')
-    ax.legend()
+    ax.legend(fontsize=7.5)
+    plt.legend(fontsize=7.5)
+    #move legend to left upper corner
+    plt.legend(loc='upper left')
     file_path = f'{_folders.VISUALIZATIONS_PATH}/{names}_violin.png'
     plt.savefig(file_path, bbox_inches='tight', dpi=600)
     #plt.show()
