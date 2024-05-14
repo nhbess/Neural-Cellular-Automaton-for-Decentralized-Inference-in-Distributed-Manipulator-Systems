@@ -78,8 +78,8 @@ def plot_training_results():
 
 
 
-    plt.plot([], [], '--', label=f'Chebyshev', color='black')
-    plt.plot([], [], '-', label=f'Manhattan', color='black')
+    plt.plot([], [], '--', label=f'Moore', color='black')
+    plt.plot([], [], '-', label=f'Von Neumann', color='black')
     
     #for i,hs in enumerate(sizes):
     #    plt.plot([], [], 'o', label=f'$H_S$:{hs}', color=palette[i+1])
@@ -143,9 +143,9 @@ def plot_final_loss():
     plt.figure(figsize=_colors.FIG_SIZE)
     
     palette2 = _colors.create_palette(2)
-    plt.plot(sizes, ccm, color='black', linestyle='--', label='Chebyshev')
+    plt.plot(sizes, ccm, color='black', linestyle='--', label='Moore')
     plt.fill_between(sizes, ccm - ccs, ccm + ccs, alpha=0.1, color=palette[0])
-    plt.plot(sizes, mcm, color='black', linestyle='-', label='Manhattan')
+    plt.plot(sizes, mcm, color='black', linestyle='-', label='Von Neumann')
     plt.fill_between(sizes, mcm - mcs, mcm + mcs, alpha=0.1, color=palette[-1])
 
 
