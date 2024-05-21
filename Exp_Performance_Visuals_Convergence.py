@@ -192,7 +192,7 @@ def _visualize_from_file(simulation_path: str, animation_path:str, state_structu
             tetro.center = [mass_centers[step][1], mass_centers[step][0]]
             x_values, y_values = zip(*tetro.vertices)
             ax[i].plot(x_values, y_values, color=style['tetro_color'], linewidth=style['tetro_line_width'], )
-            ax[i].plot(tetro.center[0], tetro.center[1], 'x', color=style['tetro_center_color'],linewidth=5, markersize = 5,zorder = 10)
+            ax[i].plot(tetro.center[0], tetro.center[1], 'x', color=style['tetro_center_color'],markeredgewidth=3, markersize = 10,zorder = 10)
             ax[i].fill(x_values, y_values, color=style['tetro_color'], alpha = 0.5)
             
             #calculate error
@@ -208,14 +208,12 @@ def _visualize_from_file(simulation_path: str, animation_path:str, state_structu
             ax[i].set_title(f'Step: {step}\n$\mu_e={error:.2f}$  $\sigma_e={std:.2f}$')
             ax[i].set_aspect('equal', adjustable='box')
             plt.tight_layout()
+            plt.subplots_adjust(wspace=-0.35, hspace=-0.35)
             #plt.subplots_adjust(left=0, right=1, top=1, bottom=0)
 
     #add legend
-    
-    #plt.legend(loc='upper center', bbox_to_anchor=(-0.1, -0.1), fancybox=True, shadow=True, ncol=5)
-
     plt.tight_layout()
-    plt.savefig(animation_path, dpi=600, bbox_inches='tight')
+    plt.savefig(animation_path, dpi=600, bbox_inches='tight', pad_inches=0.02)
     #plt.show()
 
 
