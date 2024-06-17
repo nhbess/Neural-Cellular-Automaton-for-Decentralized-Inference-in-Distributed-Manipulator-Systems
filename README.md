@@ -1,7 +1,7 @@
 # Neural Cellular Automaton for Decentralized Inference in Distributed Manipulation Systems
 
 <div style="display: flex; justify-content: center;">
-  <img src="Gif/L.gif" alt="Image 1" style="max-width: calc(10% - 10px);">
+  <img src="Gif/S.gif" alt="Image 1" style="max-width: calc(10% - 10px);">
   <img src="Gif/T.gif" alt="Image 2" style="max-width: calc(10% - 10px);">
 </div>
 
