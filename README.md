@@ -1,8 +1,8 @@
 # Neural Cellular Automaton for Decentralized Inference in Distributed Manipulation Systems
 
 <div style="display: flex; justify-content: center;">
-  <img src="Gif/L.gif" alt="Image 1" style="max-width: calc(25% - 10px);">
-  <img src="Gif/T.gif" alt="Image 2" style="max-width: calc(25% - 10px);">
+  <img src="Gif/L.gif" alt="Image 1" style="max-width: calc(10% - 10px);">
+  <img src="Gif/T.gif" alt="Image 2" style="max-width: calc(10% - 10px);">
 </div>
 
 ## Problem
@@ -18,22 +18,22 @@ We propose an approach for characterizing objects in a network of sensing agents
 We defined two sets of objects shapes: Tetrominoes and Unknown Shapes. The model was trained with the first set, and its performance was evaluated in both sets.
 
 <div style="display: flex; justify-content: center;">
-  <img src="__Images\shapes_group_0.png" alt="Image 1" style="max-width: calc(25% - 10px);">
-  <img src="__Images\shapes_group_1.png" alt="Image 2" style="max-width: calc(25% - 10px);">
+  <img src="__Images\shapes_group_0.png" alt="Image 1" style="max-width: calc(10% - 10px);">
+  <img src="__Images\shapes_group_1.png" alt="Image 2" style="max-width: calc(10% - 10px);">
 </div>
 
 The experiment shows a remarkable degree of adaptation for most of the shapes in the unknown set of objects except for those with a pronounced degree of concavity or holes. This can be explained by the lack of objects with these characteristics in the training set. On the other hand, this experiment shows that, although being robust enough to adapt to unseeing shapes, the methodology did not result in a general solution, but rather in a solution for a specific subset of shapes.
 
 <div style="display: flex; justify-content: center;">
-  <img src="Performance\__Visualizations\resultant_error.png" alt="Image 1" style="max-width: calc(25% - 10px);">
-  <img src="Performance\__Visualizations\tetrominoes_violin.png" alt="Image 2" style="max-width: calc(25% - 10px);">
+  <img src="Performance\__Visualizations\resultant_error.png" alt="Image 1" style="max-width: calc(10% - 10px);">
+  <img src="Performance\__Visualizations\tetrominoes_violin.png" alt="Image 2" style="max-width: calc(10% - 10px);">
 </div>
 
 ## Behavior Examples
 
 <div style="display: flex; justify-content: center;">
-  <img src="Performance\__Visualizations\convergence_O.png" alt="Image 1" style="max-width: calc(25% - 10px);">
-  <img src="Performance\__Visualizations\convergence_R.png" alt="Image 2" style="max-width: calc(25% - 10px);">
-  <img src="Performance\__Visualizations\convergence_T.png" alt="Image 2" style="max-width: calc(25% - 10px);">
-  <img src="Performance\__Visualizations\convergence_U.png" alt="Image 2" style="max-width: calc(25% - 10px);">
+  <img src="Performance\__Visualizations\convergence_O.png" alt="Image 1" style="max-width: calc(10% - 10px);">
+  <img src="Performance\__Visualizations\convergence_R.png" alt="Image 2" style="max-width: calc(10% - 10px);">
+  <img src="Performance\__Visualizations\convergence_T.png" alt="Image 2" style="max-width: calc(10% - 10px);">
+  <img src="Performance\__Visualizations\convergence_U.png" alt="Image 2" style="max-width: calc(10% - 10px);">
 </div>
