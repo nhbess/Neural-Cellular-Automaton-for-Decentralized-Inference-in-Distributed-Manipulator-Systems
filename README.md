@@ -32,8 +32,6 @@ The experiment shows a remarkable degree of adaptation for most of the shapes in
 ## Behavior Examples
 
 <div style="display: flex; justify-content: center;">
-  <img src="Performance\__Visualizations\convergence_O.png" alt="Image 1" style="max-width: calc(5% - 10px);">
-  <img src="Performance\__Visualizations\convergence_R.png" alt="Image 2" style="max-width: calc(5% - 10px);">
   <img src="Performance\__Visualizations\convergence_T.png" alt="Image 2" style="max-width: calc(5% - 10px);">
   <img src="Performance\__Visualizations\convergence_U.png" alt="Image 2" style="max-width: calc(5% - 10px);">
 </div>
