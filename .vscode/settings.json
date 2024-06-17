@@ -6,7 +6,7 @@
         "/.tmp.*": true,
         ".gitignore": true,
         ".gitattributes": true,
-        "README.md": true,
+        "README.md": false,
         "requirements.txt": true,
 
     }
