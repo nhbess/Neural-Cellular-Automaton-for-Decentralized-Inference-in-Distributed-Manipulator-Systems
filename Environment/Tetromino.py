@@ -1,8 +1,14 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
+
 import matplotlib.pyplot as plt
 import numpy as np
 import shapely.affinity
 from shapely.geometry import Polygon
 from Environment import Shapes
+
+
 class Tetromino:
     def __init__(self, constructor_vertices:list[tuple], scaler:float = 1) -> None:
         self.__constructor_vertices = constructor_vertices
@@ -58,8 +64,9 @@ class Tetromino:
         print('angle: {}'.format(self.__angle))
  
 def test():
-    SCALE = 15
-    tetromino = Tetromino(constructor_vertices=Shapes.VERTICES_T*SCALE)
+    SCALE = 1
+    vertexs = Shapes.tetros_dict['T']
+    tetromino = Tetromino(constructor_vertices=vertexs*SCALE)
     tetromino.center = np.array([0, 0])
     tetromino.print_info()
     tetromino.plot()

@@ -55,9 +55,10 @@ def moving_contact_masks(n_movements: int, batch_size: int, height: int, width: 
         #max_scaler = min_size_board / max_side_lengths
         #scaler = np.random.uniform(2, max_scaler)
 
-        scaler = 2
+        # VERY IMPORTANT: CHECK THIS SCALER
+        SCALER = 2
 
-        tetro = Tetromino(constructor_vertices=shape, scaler=scaler)
+        tetro = Tetromino(constructor_vertices=shape, scaler=SCALER)
         tetro.center = np.array([width / 2, height / 2])
         tetrominos.append(tetro)
 

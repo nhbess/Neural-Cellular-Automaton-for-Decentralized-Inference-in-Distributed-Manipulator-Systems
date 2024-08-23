@@ -10,7 +10,7 @@ import _config
 from ResultsHandler import ResultsHandler
 from StateStructure import StateStructure
 from Util import create_initial_states, get_target_tensor, moving_contact_masks
-
+from tqdm import tqdm
 
 class Trainer_CenterFinder:
     def __init__(self) -> None:
@@ -52,23 +52,19 @@ class Trainer_CenterFinder:
 
         pool = create_initial_states(_config.POOL_SIZE, state_structure, _config.BOARD_SHAPE).to(device)
         
-        if robustness: dead_pool = [self._create_dead_mask(device) for _ in range(_config.POOL_SIZE)]
-
+        
         
         
         logger.info(f"Training for {_config.TRAINING_STEPS} epochs")
         self.rh.set_training_start()
 
-        for step in range(1,_config.TRAINING_STEPS+1):
+        for step in tqdm(range(1,_config.TRAINING_STEPS+1)):
 
             pool_indexes = np.random.randint(_config.POOL_SIZE, size=[_config.BATCH_SIZE])
             input_states = pool[pool_indexes].to(device)
             #pool_indexes = list(np.random.randint(config.POOL_SIZE, size=[config.BATCH_SIZE]))
             #input_states = pool[pool_indexes].to(device)
 
-            if robustness:
-                dead_masks = [dead_pool[i] for i in pool_indexes]
-                dead_masks = torch.stack(dead_masks).to(device)
 
 
             contact_masks = moving_contact_masks(_config.NUM_MOVEMENTS, _config.BATCH_SIZE, *_config.BOARD_SHAPE).to(device)
@@ -81,14 +77,6 @@ class Trainer_CenterFinder:
                 dead_input_states = input_states
                 dead_input_states[..., state_structure.sensor_channels, :, :] = contact_masks[movement].unsqueeze(1)
                 
-                if robustness:
-                    dead_input_states = dead_input_states * dead_masks.unsqueeze(1)
-                #print(dead_input_states[0][0])
-
-
-                #input_states[..., state_structure.sensor_channels, :, :] = contact_masks[movement].unsqueeze(1)
-                #sensor_states = input_states[..., state_structure.sensor_channels, :, :]
-                #constant_states = input_states[..., state_structure.constant_channels, :, :]
                 
                 sensor_states = dead_input_states[..., state_structure.sensor_channels, :, :]
                 constant_states = dead_input_states[..., state_structure.constant_channels, :, :]
